@@ -1,15 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Ball : MonoBehaviour
 {
     public float speed = 200.0f;
     private Rigidbody2D _rigidbody;
+    public GameManager gameManager;
 
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
+        gameManager.gameOverText.enabled = false;
+        gameManager.replayButton.gameObject.SetActive(false);
     }
     // Start is called before the first frame update
     void Start()
